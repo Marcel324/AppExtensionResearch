@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Example_Extension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHx-2Z-GxC">
+                                <rect key="frame" x="256" y="8" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-bU-8KW">
+                                <rect key="frame" x="3" y="18" width="237" height="2"/>
+                                <color key="trackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjY-Yp-n4S">
+                                <rect key="frame" x="16" y="20" width="288" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cWJ-bU-8KW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="18" id="BOF-6G-uD1"/>
+                            <constraint firstItem="FjY-Yp-n4S" firstAttribute="top" secondItem="cWJ-bU-8KW" secondAttribute="bottom" id="Cqt-55-XNc"/>
+                            <constraint firstAttribute="trailing" secondItem="cWJ-bU-8KW" secondAttribute="trailing" constant="80" id="IPE-nS-Uad"/>
+                            <constraint firstItem="FjY-Yp-n4S" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="S4z-WC-3yO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FjY-Yp-n4S" secondAttribute="trailing" id="VEV-l4-NQc"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="FjY-Yp-n4S" secondAttribute="bottom" id="WrQ-Kg-vEW"/>
+                            <constraint firstItem="FjY-Yp-n4S" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="a0c-bl-VRh"/>
+                            <constraint firstAttribute="trailing" secondItem="nHx-2Z-GxC" secondAttribute="trailing" constant="16" id="sNg-sb-woP"/>
+                            <constraint firstItem="nHx-2Z-GxC" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="wFV-oa-Z3i"/>
+                            <constraint firstItem="cWJ-bU-8KW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="3" id="xDI-yo-WR3"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="120"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="120"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="FjY-Yp-n4S" id="BEn-2R-Fec"/>
+                        <outlet property="percentageLabel" destination="nHx-2Z-GxC" id="6Wt-5f-god"/>
+                        <outlet property="progressView" destination="cWJ-bU-8KW" id="VVy-K3-QJl"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="131.33433283358323"/>
+        </scene>
+    </scenes>
+</document>
