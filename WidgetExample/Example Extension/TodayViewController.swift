@@ -29,7 +29,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         self.updateInterface()
         detailLabel.alpha = 0.0
-        //extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
     }
     
@@ -41,10 +41,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     
+    //Updating Information
     func setUsedRate(usedRate: Double) -> Void {
         let defaults = UserDefaults.standard
         defaults.set(usedRate, forKey: RATE_KEY)
         defaults.synchronize()
+    }
+    
+    func updateSizes() {
+        
+        var dict = try! FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+        
+        // Set the values
+        self.fileSystemSize = dict[.systemSize] as? Int
+        self.freeSize = dict[.systemFreeSize] as? Int
+        self.usedSize  = self.fileSystemSize! - self.freeSize!
+        
     }
     
     func updateInterface() {
@@ -61,17 +73,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         print("I'm being tapped")
     }
     
-    
-    func updateSizes() {
-        
-    var dict = try! FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
-        
-    // Set the values
-    self.fileSystemSize = dict[.systemSize] as? Int
-    self.freeSize = dict[.systemFreeSize] as? Int
-    self.usedSize  = self.fileSystemSize! - self.freeSize!
-        
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .compact {
+            preferredContentSize = maxSize
+        } else {
+            preferredContentSize = CGSize(width: 0.0, height: kWExpandedHeight)
+        }
     }
+    
+    
     
  
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
