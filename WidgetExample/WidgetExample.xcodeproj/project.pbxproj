@@ -443,6 +443,7 @@
 				3E1CFBD31E8C3B7F00F1251F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E1CFBE61E8C3BBD00F1251F /* Build configuration list for PBXNativeTarget "Example Extension" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +452,7 @@
 				3E1CFBE81E8C3BBD00F1251F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
